@@ -13,7 +13,7 @@ part of an electrical generator, whereas the trajectories are analogous to
 the alternating currents that result from turning mechanical energy into
 electrical energy. See bellow for an illustration:
 
-![](alternators.png)
+
 <p align="center">
 <img src="alternators.png" alt="alternators" width="80%"/>
 </p>
@@ -22,7 +22,7 @@ electrical energy. See bellow for an illustration:
 <em>The Alternators offer a rapid and precise generative framework for generative modeling. See below for an illustration.</em>
 </p>
 
-![](toy_gif.gif)
+
 <p align="center">
 <img src="toy_gif.gif" alt="toy_gif" width="60%"/>
 </p>
@@ -56,8 +56,12 @@ For default setup.
 
 ## Pretrained models 
 You can find the pretrained models for the experiments in this[repository]().
+## Train from scratch
+```
+python toy_example.py --dataset_name 'pinwheel' --test False --batch_size 1000 --num_epochs 10000 --N_steps 15 
+```
 
-
+-**N_steps** is the maximum number of steps for the generative process to generate the final samples 
 ## Citation
 ```bibtex
 @article{xx,
