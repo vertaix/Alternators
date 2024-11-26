@@ -1,73 +1,84 @@
-# Alternators For Dynamical Generative Modeling
+# Alternators for Dynamical Generative Modeling
 
-This repository contains the implementation of the Alternators,
-a novel family of generative models for time-dependent data. 
-An alternator is a latent-variable model that features two neural networks:
-the OPN and the STN. The OPN and the STN work in conjunction,
-alternating between outputting samples in the observation space and the
-latent space, respectively, over a cycle.
+This repository contains the implementation of **Alternators**, a novel family of generative models for time-dependent data. Alternators are latent-variable models featuring two neural networks: the **Observation Prediction Network (OPN)** and the **State Transition Network (STN)**. These networks alternate to generate samples in the observation space and the latent space, respectively, over a cycle.
 
-We used the name "alternator" because we can draw an analogy
-with electromagnetism. The OPN and the STN are analogous to the mechanical
-part of an electrical generator, whereas the trajectories are analogous to
-the alternating currents that result from turning mechanical energy into
-electrical energy. See bellow for an illustration:
-
+The name "Alternator" draws an analogy with electromagnetism. Just as an electrical generator alternates mechanical energy into electrical energy, Alternators alternate between latent and observation spaces to generate dynamic data trajectories. Below is an illustration:
 
 <p align="center">
-<img src="alternators.png" alt="alternators" width="80%"/>
+  <img src="alternators.png" alt="Alternators Illustration" width="80%"/>
 </p>
 
 <p align="center">
-<em>The Alternators offer a rapid and precise generative framework for generative modeling. See below for an illustration.</em>
+  <em>Illustration of Alternators: a rapid and precise framework for time-dependent generative modeling.</em>
 </p>
 
+For further details, please refer to our paper, *[Alternators for Dynamical Generative Modeling](#)*.
 
-<p align="center">
-<img src="toy_gif.gif" alt="toy_gif" width="60%"/>
-</p>
-
+---
 
 
+---
 
-For more information, please see our paper,
-[Alternators For Dynamical Generative Modeling]().
+## Requirements
+
+Ensure you have the following dependencies installed:
+- Python 3.8+
+- PyTorch 1.10+
+- numpy
+- matplotlib
+- scikit-learn
+- scipy
+
+Install all dependencies with:
+```bash
+pip install -r requirements.txt
+```
+
+---
 
 ## Usage
 
-You can use Alternators for regenerating the toy examples by cloning this repository:
-```
-git clone https://github.com/vertaix/Alternators.git
-cd Alternators
-pip install -r requirements.txt
-python toy_example.py --dataset_name 'pinwheel' --test True --model_path './pretrained_models_dirctory/' --result_path './saving_result_directory'
-```
--**pretrained_models_dirctory** is the directory that pretrained models are saved.
+### Running Toy Examples
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/vertaix/Alternators.git
+   cd Alternators
+   ```
+2. Run the toy example:
+   ```bash
+   python alternator_test.py
+   ```
+3. Pretrained models will be saved in `pretrained_models_directory`, and results will be saved in `saving_result_directory`.
 
--**saving_result_directory** is the target directory for the results 
+### Key Parameters
+- **`pretrained_models_directory`**: Directory for storing pretrained models.
+- **`saving_result_directory`**: Directory for saving generated results.
+- **`N_steps`**: Maximum number of steps for generating the final samples.
 
-This example code covers four different synthetic datasets: checkerboard, 2spirals, 8gaussians, and pinwheel.
+---
 
-Or simply use 
-```
-python toy_example.py
-```
-For default setup.
+## Visualization
 
-## Pretrained models 
-You can find the pretrained models for the experiments in this[repository]().
-## Train from scratch
-```
-python toy_example.py --dataset_name 'pinwheel' --test False --batch_size 1000 --num_epochs 10000 --N_steps 15 
-```
+The repository includes tools for visualizing generated trajectories. Example output:
 
--**N_steps** is the maximum number of steps for the generative process to generate the final samples 
+<p align="center">
+  <img src="trajectory_example.png" alt="Generated Trajectories" width="80%"/>
+</p>
+
+---
+
 ## Citation
+
+If you find this work useful, please cite our paper:
 ```bibtex
-@article{xx,
-  title={xx},
-  author={xx},
-  journal={xx},
-  year={xx}
+@article{rezaei2024alternators,
+  title={Alternators For Sequence Modeling},
+  author={Rezaei, Mohammad Reza and Dieng, Adji Bousso},
+  journal={arXiv preprint arXiv:2405.11848},
+  year={2024}
 }
 ```
+
+---
+
+For questions or support, please raise an issue in this repository. Happy modeling! 🚀
