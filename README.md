@@ -55,17 +55,6 @@ pip install -r requirements.txt
 - **`saving_result_directory`**: Directory for saving generated results.
 - **`N_steps`**: Maximum number of steps for generating the final samples.
 
----
-
-## Visualization
-
-The repository includes tools for visualizing generated trajectories. Example output:
-
-<p align="center">
-  <img src="trajectory_example.png" alt="Generated Trajectories" width="80%"/>
-</p>
-
----
 
 ## Citation
 
