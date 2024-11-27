@@ -25,6 +25,14 @@ For further details, please refer to our paper, *[Alternators for Dynamical Gene
 </p>
 ---
 
+<p align="center">
+  <img src="neural_trajectory.png" alt="Alternators results neural" width="80%"/>
+</p>
+
+<p align="center">
+  <em>A set of 20 trajectories sampled from different models conditional on spiking activities from neural decoding datasets:Motor cortex, Somatosensory, and  Hippocampus.</em>
+</p>
+
 ## Requirements
 
 Ensure you have the following dependencies installed:
