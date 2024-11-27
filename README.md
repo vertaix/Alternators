@@ -12,7 +12,7 @@ The name "Alternator" draws an analogy with electromagnetism. Just as an electri
   <em>Illustration of Alternators: a rapid and precise framework for time-dependent generative modeling.</em>
 </p>
 
-For further details, please refer to our paper, *[Alternators for Dynamical Generative Modeling](#)*.
+For further details, please refer to our paper, *[Alternators for Dynamical Generative Modeling](https://arxiv.org/abs/2405.11848)*.
 
 ---
 
