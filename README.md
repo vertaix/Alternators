@@ -17,7 +17,7 @@ For further details, please refer to our paper, *[Alternators for Dynamical Gene
 ---
 
 <p align="center">
-  <img src="Lorenz_alt_latents.pdf" alt="Alternators results" width="80%"/>
+  <img src="Lorenz_alt_latents.png" alt="Alternators results" width="80%"/>
 </p>
 
 <p align="center">
