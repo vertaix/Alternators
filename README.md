@@ -16,7 +16,13 @@ For further details, please refer to our paper, *[Alternators for Dynamical Gene
 
 ---
 
+<p align="center">
+  <img src="Lorenz_alt_latents.pdf" alt="Alternators results" width="80%"/>
+</p>
 
+<p align="center">
+  <em>Alternators are better at tracking the chaotic dynamics defined by a Lorenz attractor.</em>
+</p>
 ---
 
 ## Requirements
