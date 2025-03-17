@@ -1,5 +1,10 @@
-# Alternators for Sequence Modeling
 
+<h1 align="center">Alternators for Sequence Modeling</h1>
+<p align="center">
+  <a href="https://www.arxiv.org/abs/2502.04593">
+    <img src="https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv" alt="arXiv">
+  </a>
+</p>
 This repository contains the implementation of **Alternators**, a novel family of generative models for time-dependent data. Alternators are latent-variable models featuring two neural networks: the **Observation Prediction Network (OPN)** and the **State Transition Network (STN)**. These networks alternate to generate samples in the observation space and the latent space, respectively, over a cycle.
 
 The name "Alternator" draws an analogy with electromagnetism. Just as an electrical generator alternates mechanical energy into electrical energy, Alternators alternate between latent and observation spaces to generate dynamic data trajectories. Below is an illustration:
