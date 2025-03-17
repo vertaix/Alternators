@@ -1,7 +1,7 @@
 
-<h1 align="center">Alternators for Sequence Modeling</h1>
+<h1 align="center">Alpha Alternator</h1>
 <p align="center">
-  <a href="[https://www.arxiv.org/abs/2502.04593](https://arxiv.org/abs/2405.11848)">
+  <a href="https://arxiv.org/abs/2405.11848">
     <img src="https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv" alt="arXiv">
   </a>
 </p>
