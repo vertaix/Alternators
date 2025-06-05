@@ -59,7 +59,7 @@ optimizer = optim.AdamW(model.parameters(), lr=1e-3)
 # )
 CLIP = 1
 warmup_epochs = 5
-Numb_Epochs = 200
+Numb_Epochs = 100
 total_loss = []
 
 # Training loop
@@ -73,7 +73,7 @@ for epoch in range(Numb_Epochs):
 
         optimizer.zero_grad()
 
-        mask_imput = get_mask_imputation(x_batch.shape[0], 20).to(device)
+        mask_imput = get_mask_imputation(x_batch.shape[0], 0).to(device)
         eps_z = model.sigma_z * torch.randn(z_batch[0].shape).to(device)
         eps_x = model.sigma_x * torch.randn(x_batch[0].shape).to(device)
 

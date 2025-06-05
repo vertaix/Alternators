@@ -114,7 +114,7 @@ class Alt(nn.Module):
         for t in range(1, T):
             eps_z=self.sigma_z*torch.randn(self.z_hat[0].shape).to(self.device)
             eps_x=self.sigma_z*torch.randn(self.x_hat[0].shape).to(self.device)
-            if obsr_enable and mask[t].any():
+            if obsr_enable or mask[t] != True:
                 self.x_hat[t] = torch.sqrt(1 - self.sigma_x ** 2) * self.g_theta(self.z_hat[t-1:t].clone(), t)
                 self.z_hat[t] = (
                     torch.sqrt(self.alpha) * self.f_phi_x(self.obsrv[t:t+1], t)
