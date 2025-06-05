@@ -36,7 +36,7 @@ model = Alt(latent_dim=1, obser_dim=xs.shape[-1], sigma_x=0.2, alpha=0.7,
 optimizer = optim.AdamW(model.parameters(), lr=2e-4)
 CLIP = 1
 total_loss = []
-Numb_Epochs = 200
+Numb_Epochs = 400
 
 # Training loop
 for epoch in range(Numb_Epochs):

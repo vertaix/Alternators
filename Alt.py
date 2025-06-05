@@ -173,3 +173,10 @@ class get_dataset_HC(Dataset):
 
     def __getitem__(self, index):
         return self.x[:, index, :], self.z[:, index, :], self.v[:, index, :]
+
+def init_weights(m):
+    for name, param in m.named_parameters():
+        nn.init.uniform_(param.data, -0.05, 0.05)
+
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)

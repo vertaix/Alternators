@@ -1,4 +1,5 @@
 *.pt
 *.pkl
 *.xml
+Results/
 __pycache__/

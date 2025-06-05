@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 from torch.nn.utils import spectral_norm
-
+from scipy.signal.windows import gaussian
 
 def add_sn(m):
     if isinstance(m, (nn.Conv2d, nn.ConvTranspose2d)):
@@ -88,3 +88,28 @@ def get_mask_forcasting(length,forcasting_rate):
     true_indx=torch.arange(np.floor((100-forcasting_rate)/100*length).astype('int'), length)
     mask[true_indx]=1
     return mask
+
+def calDesignMatrix_V2(X,h):
+    '''
+
+    :param X: [samples*Feature]
+    :param h: hist
+    :return: [samples*hist*Feature]
+
+    '''
+    PadX = np.zeros([h , X.shape[1]])
+    PadX =np.concatenate([PadX,X],axis=0)
+    XDsgn=np.zeros([X.shape[0], h, X.shape[1]])
+    # print(PadX.shapepe)
+    for i in range(0,XDsgn.shape[0]):
+         #print(i)
+         XDsgn[i, : , :]= (PadX[i:h+i,:])
+    return XDsgn
+
+def gaussian_kernel_smoother(y, sigma, window):
+    b = gaussian(window, sigma)
+    y_smooth = np.zeros(y.shape)
+    neurons = y.shape[1]
+    for neuron in range(neurons):
+        y_smooth[:, neuron] = np.convolve(y[:, neuron], b/b.sum(),'same')
+    return y_smooth
