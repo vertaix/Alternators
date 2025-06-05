@@ -63,11 +63,15 @@ pip install -r requirements.txt
    git clone https://github.com/vertaix/Alternators.git
    cd Alternators
    ```
-2. Run the toy example:
+2. Generate the toy dataset:
+   ```bash
+   python simulation_data.py
+   ```
+3. Run the toy example:
    ```bash
    python alternator_test.py
    ```
-3. Pretrained models will be saved in `pretrained_models_directory`, and results will be saved in `saving_result_directory`.
+4. Pretrained models will be saved in `pretrained_models_directory`, and results will be saved in `saving_result_directory`.
 
 ### Key Parameters
 - **`pretrained_models_directory`**: Directory for storing pretrained models.

@@ -110,4 +110,4 @@ dataset= {'xs': noisy_observations.T[L:]/noisy_observations.max(axis=1),
              'latents': np.expand_dims(modulated_signal[L:], axis=-1)/modulated_signal.max()}
 
 import pickle
-pickle.dump(dataset, open("dataset_simple_test.p", "wb"))
+pickle.dump(dataset, open("dataset_simple.p", "wb"))
