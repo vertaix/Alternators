@@ -14,7 +14,22 @@ def add_sn(m):
 def reparameterize(mu, std):
     z = torch.randn_like(mu) * std + mu
     return z
-
+def calSmoothNeuralActivity(data,gausWindowLength,gausWindowSigma):
+    x=np.linspace(-1*gausWindowSigma,1*gausWindowSigma,gausWindowLength)
+    gausWindow=1/(2*np.pi*gausWindowSigma)*np.exp(-0.5*(x**2/gausWindowSigma**2))
+    gausWindow=gausWindow/np.max(gausWindow)
+    #plt.plot(x,gausWindow)
+    #plt.show()
+    dataSmooth=np.zeros(data.shape)
+    for i in range(data.shape[1]):
+        dataSmooth[:,i]=np.convolve(data[:,i],gausWindow,'same')
+        #dataSmooth[np.where(dataSmooth[:,i] <0), i]=0
+    #plt.subplot(2,1,1)
+    #plt.plot(data[:5000,1])
+    #plt.subplot(2, 1, 2)
+    #plt.plot(dataSmooth[:5000, 1])
+    #plt.show()
+    return dataSmooth
 
 def create_grid(h, w, device):
     grid_y, grid_x = torch.meshgrid([torch.linspace(0, 1, steps=h),

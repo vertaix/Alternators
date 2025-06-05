@@ -71,13 +71,6 @@ pip install -r requirements.txt
    ```bash
    python alternator_test.py
    ```
-4. Pretrained models will be saved in `pretrained_models_directory`, and results will be saved in `saving_result_directory`.
-
-### Key Parameters
-- **`pretrained_models_directory`**: Directory for storing pretrained models.
-- **`saving_result_directory`**: Directory for saving generated results.
-- **`N_steps`**: Maximum number of steps for generating the final samples.
-
 
 ## Citation
 
@@ -91,6 +84,3 @@ If you find this work useful, please cite our paper:
 }
 ```
 
----
-
-For questions or support, please raise an issue in this repository. Happy modeling! 🚀

@@ -8,7 +8,7 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 from utils import *
 
-from LDIP_A_Att import *
+from Alt import *
 dataset = pickle.load(open("data/NeuralData/example_data_m1_pp.p", "rb"))
 batch_size=2
 ''' data'''
@@ -46,7 +46,7 @@ Dataset_test = get_dataset_HC(x_test, z_test, device)
 Dataset_loader = DataLoader(Dataset, batch_size=batch_size,shuffle=False)
 Dataset_val_loader = DataLoader(Dataset_val, batch_size=z_val.shape[1],shuffle=False)
 Dataset_test_loader = DataLoader(Dataset_test, batch_size=z_test.shape[1],shuffle=False)
-model = LDIP_A(latent_dim=z_tr.shape[-1], obser_dim=x_tr.shape[-1], sigma_x=.2,alpha=.3, importance_sample_size=1, n_layers=2,
+model = Alt(latent_dim=z_tr.shape[-1], obser_dim=x_tr.shape[-1], sigma_x=.2,alpha=.3, importance_sample_size=1, n_layers=2,
               device=device).to(device)
 # model.apply(init_weights)
 print(f'The g_theta model has {count_parameters(model.g_theta):,} trainable parameters')
