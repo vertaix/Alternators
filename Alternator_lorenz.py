@@ -24,7 +24,7 @@ z =  (z - z.min(axis=0)) / (z.max(axis=0) - z.min(axis=0))
 device = torch.device('cpu')
 Dataset = get_dataset(x, z, device)
 Dataset_loader = DataLoader(Dataset, batch_size=x.shape[0], shuffle=False)
-model = LDIP_A(latent_dim=z.shape[1], obser_dim=x.shape[1],
+model = Alt(latent_dim=z.shape[1], obser_dim=x.shape[1],
                sigma_x=.1, alpha=.3,
                importance_sample_size=1, n_layers=2,
                device=device).to(device)

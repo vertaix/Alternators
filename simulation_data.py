@@ -5,7 +5,7 @@ from scipy.stats import pearsonr
 ##################### Create the states
 # Parameters
 fs = 500  # Sampling frequency
-t = np.arange(.25, 2, 1 / fs)  # Time vector from 0 to 2 seconds
+t = np.arange(.25, 1, 1 / fs)  # Time vector from 0 to 2 seconds
 low_freq = 2  # Low frequency in Hz
 high_freq1 = 60  # High frequency for the first window in Hz
 high_freq2 = 60  # High frequency for the second window in Hz
@@ -31,7 +31,7 @@ for i, (start, end) in enumerate(modulation_windows):
         modulated_signal[start_idx:end_idx] += high_freq_signal1[start_idx:end_idx]
     elif i == 1:
         modulated_signal[start_idx:end_idx] += high_freq_signal2[start_idx:end_idx]
-modulated_signal=modulated_signal+np.random.randn(modulated_signal.shape[0])*.5
+modulated_signal=modulated_signal+np.random.randn(modulated_signal.shape[0])*.2
 
 # Plot the signals
 plt.figure(figsize=(14, 6))

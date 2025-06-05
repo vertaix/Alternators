@@ -74,3 +74,17 @@ def sample_from_discretized_mix_logistic(y, img_channels=3, log_scale_min=-7.):
     sample = torch.stack(sample, dim=1)
 
     return sample
+
+def get_mask_imputation(length,missing_rate):
+    mask=torch.zeros(length, dtype=torch.bool)
+
+    # np.random.choice(range(length), 10, replace=np.floor((missing_rate/100)*length).astype('int'))
+    true_indx=np.random.choice(range(length), np.floor((missing_rate/100)*length).astype('int'), replace=False)
+    mask[true_indx]=1
+    return mask
+
+def get_mask_forcasting(length,forcasting_rate):
+    mask=torch.zeros(length, dtype=torch.bool)
+    true_indx=torch.arange(np.floor((100-forcasting_rate)/100*length).astype('int'), length)
+    mask[true_indx]=1
+    return mask
