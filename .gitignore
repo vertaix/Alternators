@@ -1,3 +1,4 @@
 *.pt
 *.pkl
 *.xml
+__pycache__/
