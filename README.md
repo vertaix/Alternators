@@ -14,7 +14,7 @@ The name "Alternator" draws an analogy with electromagnetism. Just as an electri
 </p>
 
 <p align="center">
-  <em>Illustration of Alternators: a rapid and precise framework for time-dependent generative modeling.</em>
+  <em>Illustration of Alternators: a new framework for time-dependent generative modeling.</em>
 </p>
 
 For further details, please refer to our paper, *[Alternators for Sequence Modeling](https://arxiv.org/abs/2405.11848)*.
